@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.css']
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.css']
 })
-export class LandingPageComponent {
-
-  title = 'app';
+export class FormComponent {
   answer = '';
   answerDisplay = '';
   showSpinner = false;
@@ -21,5 +19,3 @@ export class LandingPageComponent {
     }, 2000);
   }
 }
-
-

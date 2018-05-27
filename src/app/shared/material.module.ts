@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatButtonModule,
+  MatListModule,
   MatToolbarModule,
   MatInputModule,
   MatProgressSpinnerModule,
@@ -25,6 +26,7 @@ import {
 @NgModule({
   imports: [
     MatDatepickerModule,
+    MatListModule,
     MatInputModule,
     MatRadioModule,
     MatCheckboxModule,
@@ -47,6 +49,7 @@ import {
   exports: [
     MatDatepickerModule,
     MatInputModule,
+    MatListModule,
     MatRadioModule,
     MatCheckboxModule,
     MatSelectModule,

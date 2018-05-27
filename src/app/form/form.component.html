@@ -1,40 +1,27 @@
-<p>
-  landing-page works!
-</p>
 
-<h1> Welcome to {{ title }}!</h1>
-<mat-icon>home</mat-icon>
-<button mat-button>My Button</button>
+   
+        
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
 
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>My Material</span>
-    
-    <span class="example-spacer"></span>
-    
-    <button mat-button>About</button>
-    <button mat-button>Services</button>
-    <button mat-button>Contact</button>
-  </mat-toolbar-row>
-</mat-toolbar>
+      <div class= 'form-container'>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>ITem1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>  
+ 
 
-
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
 
 
 <mat-card>
   <mat-form-field>
     <input matInput [(ngModel)]="answer" placeholder="placeholder">
   </mat-form-field>
-  
+
   <br>
   <button mat-raised-button (click)="showAnswer()">Answer Me</button>
   <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
-  
+
 </mat-card>
 <mat-card *ngIf="answerDisplay">
   <h1>{{ answerDisplay }}, you're right.</h1>
@@ -49,3 +36,4 @@
 <br>
 
 <textarea pInputTextarea></textarea>
+</div>
