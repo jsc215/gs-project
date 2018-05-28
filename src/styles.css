@@ -8,3 +8,8 @@ body {
 html, body {
   height: 100%;
 }
+
+.mat-tab-label {
+  margin-left: 200px;
+  width:auto; 
+}
