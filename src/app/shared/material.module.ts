@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatButtonModule,
+  MatGridListModule,
   MatListModule,
   MatToolbarModule,
   MatInputModule,
@@ -20,13 +21,15 @@ import {
   MatIconModule,
   MatProgressBarModule,
   MatDialogModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+
 } from '@angular/material';
 
 @NgModule({
   imports: [
     MatDatepickerModule,
     MatListModule,
+    MatGridListModule,
     MatInputModule,
     MatRadioModule,
     MatCheckboxModule,
@@ -44,10 +47,11 @@ import {
     MatProgressBarModule,
     MatNativeDateModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   exports: [
     MatDatepickerModule,
+    MatGridListModule,
     MatInputModule,
     MatListModule,
     MatRadioModule,
