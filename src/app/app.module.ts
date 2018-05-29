@@ -16,6 +16,7 @@ import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { HumorComponent } from './humor/humor.component';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
+import { UsersComponent } from './users/users.component';
 
 
 const appRoutes: Routes = [
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     NotFoundComponent,
     FormComponent,
     HomeComponent,
-    HumorComponent
+    HumorComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
