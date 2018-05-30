@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { HumorComponent } from './humor/humor.component';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
 import { UsersComponent } from './users/users.component';
+import { UserService } from './services/user.service';
 
 
 const appRoutes: Routes = [
@@ -50,7 +51,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
+    UserService
   ],
   bootstrap: [AppComponent]
 })

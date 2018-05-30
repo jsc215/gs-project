@@ -12,7 +12,7 @@
               <input formControlName="FirstName" matInput placeholder="First Name">
             </mat-form-field>
             <mat-error>
-              <span *ngIf="!regiForm.get('FirstName').valid && regiForm.get('FirstName').touched">Please enter First Name !!!</span>
+              <span *ngIf="!regiForm.get('FirstName').valid && regiForm.get('FirstName').touched">Please enter First Name</span>
             </mat-error>
           </td>
           <td>
@@ -20,7 +20,7 @@
               <input formControlName="LastName" matInput placeholder="Last Name">
             </mat-form-field>
             <mat-error>
-              <span *ngIf="!regiForm.get('LastName').valid && regiForm.get('LastName').touched">Please enter Last Name !!!</span>
+              <span *ngIf="!regiForm.get('LastName').valid && regiForm.get('LastName').touched">Please enter Last Name</span>
             </mat-error>
           </td>
         </tr>
@@ -30,7 +30,7 @@
               <textarea formControlName="Address" matInput placeholder="Address" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
             </mat-form-field>
             <mat-error>
-              <span *ngIf="!regiForm.get('Address').valid && regiForm.get('Address').touched">Please enter proper address !!!</span>
+              <span *ngIf="!regiForm.get('Address').valid && regiForm.get('Address').touched">Please enter a proper address</span>
             </mat-error>
           </td>
         </tr>
@@ -42,7 +42,7 @@
               <mat-datepicker touchUi="true" #picker></mat-datepicker>
             </mat-form-field>
             <mat-error>
-              <span *ngIf="!regiForm.get('DOB').valid && regiForm.get('DOB').touched">Please select any Date !!!</span>
+              <span *ngIf="!regiForm.get('DOB').valid && regiForm.get('DOB').touched">Please select a Date</span>
             </mat-error>
           </td>
         </tr>
@@ -56,20 +56,20 @@
               <mat-radio-button value="Female">Female</mat-radio-button>
             </mat-radio-group>
             <mat-error>
-              <span *ngIf="!regiForm.get('Gender').valid && regiForm.get('Gender').touched">Please select any gender !!!</span>
+              <span *ngIf="!regiForm.get('Gender').valid && regiForm.get('Gender').touched">Please select a gender</span>
             </mat-error>
           </td>
           <td>
             <br>
             <mat-form-field>
-              <mat-select formControlName="OS of Choice" placeholder="OS of Choice">
+              <mat-select formControlName="OSofChoice" placeholder="OS of Choice">
                 <mat-option>-- Select Any --</mat-option>
                 <mat-option value="Unix">Unix</mat-option>
                 <mat-option value="Windows">Windows</mat-option>
                 <mat-option value="Linux">Linux</mat-option>
               </mat-select>
               <mat-error>
-                <span *ngIf="!regiForm.get('OS of Choice').valid && regiForm.get('OS of Choice').touched">Please select any item !!!</span>
+                <span *ngIf="!regiForm.get('OSofChoice').valid && regiForm.get('OSofChoice').touched">Please select an OS</span>
               </mat-error>
             </mat-form-field>
           </td>
@@ -78,9 +78,9 @@
           <td colspan="2">
             <mat-form-field class="demo-full-width">
               <input formControlName="Email" matInput placeholder="Email">
-              <mat-hint>use like : demo@demo.com</mat-hint>
+              <mat-hint>formatted like: demo@demo.com</mat-hint>
               <mat-error>
-                <span *ngIf="!regiForm.get('Email').valid && regiForm.get('Email').touched">Enter proper Email !!!</span>
+                <span *ngIf="!regiForm.get('Email').valid && regiForm.get('Email').touched">Enter proper Email</span>
               </mat-error>
             </mat-form-field>
           </td>

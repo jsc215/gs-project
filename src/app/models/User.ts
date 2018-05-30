@@ -5,5 +5,6 @@ export class User {
   DOB: String;
   Gender: String;
   OSofChoice: String;
+  Email: String;
   IsAccepted: Number;
 }
