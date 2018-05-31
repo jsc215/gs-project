@@ -4,3 +4,10 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.menu-position{
+  flex: 2;
+}
+
+h1 {
+ margin-left: 300px
+}

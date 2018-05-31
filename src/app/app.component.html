@@ -7,7 +7,7 @@
         </span>
       </mat-toolbar-row>
       <mat-toolbar-row routerLink="/form">
-        New Form
+        Registration Form
       </mat-toolbar-row>
       <mat-toolbar-row routerLink="/humor">
         Coding Comedy
@@ -20,8 +20,13 @@
         menu
       </mat-icon>
     </button>
-    <mat-icon routerLink="/">home</mat-icon>
-    Goji Emoji
+    <mat-icon style ='cursor: pointer;' routerLink="/">home</mat-icon>
+    <span class='menu-position'></span>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu color='accent' #menu="matMenu">
+      <button mat-menu-item>Menu Link</button>
+      <button mat-menu-item>That is Lonely</button>
+    </mat-menu>
   </mat-toolbar>
   <div class="body-margin">
     <router-outlet></router-outlet>

@@ -1,7 +1,10 @@
+import { User } from './../models/User';
+import { UserDataTableComponent } from './../user-data-table/user-data-table.component';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule, NgForm } from '@angular/forms';
 import { UserService } from '../services/user.service';
-import { User } from '../models/User';
+
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -9,6 +12,7 @@ import { User } from '../models/User';
 })
 export class FormComponent {
   regiForm: FormGroup;
+  _id = null;
   FirstName = '';
   LastName = '';
   Address = '';
@@ -17,10 +21,12 @@ export class FormComponent {
   OSOfChoice = '';
   Email = '';
   IsAccepted = 0;
+  submitted = false;
 
   constructor(private fb: FormBuilder, private userService: UserService) {
     // To initialize FormGroup
     this.regiForm = fb.group({
+      _id: [null],
       FirstName: [null, Validators.required],
       LastName: [null, Validators.required],
       Address: [
@@ -63,6 +69,7 @@ export class FormComponent {
   // Executed When Form Is Submitted
   onFormSubmit(form: NgForm) {
     const newUser: User = {
+      _id: this._id,
       FirstName: this.regiForm.value.FirstName,
       LastName: this.regiForm.value.LastName,
       Address: this.regiForm.value.Address,
@@ -77,5 +84,6 @@ export class FormComponent {
     this.userService.addUser(newUser).subscribe((res) => {
       console.log(res);
     });
+    this.submitted = true;
   }
 }
