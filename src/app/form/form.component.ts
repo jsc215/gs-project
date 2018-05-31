@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule, NgForm } from '@angular/forms';
 import { UserService } from '../services/user.service';
 
-
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',

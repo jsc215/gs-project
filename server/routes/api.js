@@ -39,11 +39,9 @@ router.post('/users', (req, res) => {
   );
 });
 
-
-
 //----Tasks----//
 
-//Post task
+// New Task
 router.post('/tasks', (req, res) => {
   let task = new Task({
     text: req.body.text
@@ -71,7 +69,7 @@ router.get('/tasks', (req, res) => {
   );
 });
 
-// GET post by id
+// GET Task by id
 router.get('/tasks/:id', (req, res) => {
   let id = req.params.id;
 
@@ -93,7 +91,7 @@ router.get('/tasks/:id', (req, res) => {
     });
 });
 
-// DELETE task
+// DELETE Task
 router.delete('/tasks/:id', (req, res) => {
   let id = req.params.id;
   if (!ObjectID.isValid(id)) {
@@ -114,7 +112,7 @@ router.delete('/tasks/:id', (req, res) => {
     });
 });
 
-// UPDATE task
+// UPDATE Task
 router.patch('/tasks/:id', (req, res) => {
   let id = req.params.id;
 

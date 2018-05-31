@@ -6,7 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from './shared/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,21 +16,30 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import { UsersComponent } from './users/users.component';
 import { UserService } from './services/user.service';
 import { UserDataTableComponent } from './user-data-table/user-data-table.component';
+import { TasksService } from './services/tasks.service';
+import { TasksComponent } from './tasks/tasks.component';
 
 // PrimeNg Components
+import { CalendarModule } from 'primeng/calendar';
 import { TableModule } from 'primeng/table';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
-
-
-import { TasksService } from './services/tasks.service';
-import { TasksComponent } from './tasks/tasks.component';
+import { SpinnerModule } from 'primeng/spinner';
+import { ButtonModule } from 'primeng/button';
+import { TreeTableModule } from 'primeng/treetable';
+import { TreeNode } from 'primeng/api';
+import { PickListModule } from 'primeng/picklist';
+import { ChartModule } from 'primeng/chart';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import { GrowlModule } from 'primeng/growl';
 
 const appRoutes: Routes = [
   { path: 'form', component: FormComponent },
   { path: 'humor', component: HumorComponent },
   { path: 'user-data-table', component: UserDataTableComponent },
+  { path: 'tasks', component: TasksComponent },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent }
 ];
@@ -58,10 +66,13 @@ const appRoutes: Routes = [
     LayoutModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    // PrimeNG
-    TableModule,
+    TableModule
   ],
-  providers: [{ provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }, UserService, TasksService],
+  providers: [
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
+    UserService,
+    TasksService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

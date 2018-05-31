@@ -1,1 +1,16 @@
 
+img {
+  border-radius: 30px;
+  margin: 100px;
+  padding:20px;
+  height: 400px;
+  width: aut0;
+}
+
+.mat-tab{
+  background: blue;
+}
+.mat-progress-bar {
+  width: 70%;
+  margin: auto;
+}
