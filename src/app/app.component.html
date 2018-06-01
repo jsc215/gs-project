@@ -20,8 +20,11 @@
         menu
       </mat-icon>
     </button>
-    <mat-icon style ='cursor: pointer;' routerLink="/">home</mat-icon>
-    <span class='menu-position'></span>
+    <mat-icon 
+      style='cursor: pointer;' 
+      routerLink="/">home
+    </mat-icon>
+    <span class='title'>Component World!</span>
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
     <mat-menu color='accent' #menu="matMenu">
       <button mat-menu-item>Menu Link</button>

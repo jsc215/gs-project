@@ -3,9 +3,9 @@
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-.menu-position{
-  flex: 2;
+.title {
+  flex: auto;
+  text-align: center;;
 }
 
 h1 {
