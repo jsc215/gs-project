@@ -23,3 +23,4 @@ describe('UserDataTableComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

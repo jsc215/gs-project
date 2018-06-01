@@ -19,15 +19,12 @@ app.use(express.static(path.join(__dirname, './dist')));
 // api location
 app.use('/api', api);
 
-
 // angular assets and entry point
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './dist/index.html'));
 });
 
-
 const cors = require('cors');
-
 
 // set port
 const port = process.env.PORT || '3000';
