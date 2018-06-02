@@ -1,6 +1,7 @@
-import { TasksService } from './../services/tasks.service';
 import { OnInit, Component } from '@angular/core';
+import { TasksService } from './../services/tasks.service';
 import { Task } from '../models/Task';
+import { map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tasks',
@@ -8,18 +9,20 @@ import { Task } from '../models/Task';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
-  displayDialog: boolean;
-  tasks: Task[];
-  selectedTask: Task;
-  newTask: boolean;
+  displayDialog: Boolean;
   task;
-  cols: any[];
-
+  selectedTask: Task;
+  newTask: Boolean;
+  tasks;
+  cols: any;
   constructor(private tasksService: TasksService) {}
 
   ngOnInit() {
     this.getTasks();
-   this.cols = [{ field: 'text', header: 'Task' }, { field: 'completed', header: 'Done?' }];
+      this.cols = [
+        { field: 'text', header: 'Task' },
+        { field: 'completed', header: 'Completed'}
+      ];
   }
 
   getTasks() {
@@ -51,20 +54,19 @@ export class TasksComponent implements OnInit {
       });
       tasks[this.tasks.indexOf(this.selectedTask)] = this.task;
     }
-
     this.tasks = tasks;
-    this.task = null;
+    this.task = '';
     this.displayDialog = false;
   }
 
   delete() {
+    const index = this.tasks.indexOf(this.selectedTask);
+    this.tasks = this.tasks.filter((val, i) => i !== index);
+    this.task = '';
+    this.displayDialog = false;
     this.tasksService.deleteTask(this.selectedTask._id).subscribe((res) => {
       return this.getTasks();
     });
-    const index = this.tasks.indexOf(this.selectedTask);
-    this.tasks = this.tasks.filter((val, i) => i !== index);
-    this.task = null;
-    this.displayDialog = false;
   }
 
   onRowSelect(event) {
@@ -73,11 +75,13 @@ export class TasksComponent implements OnInit {
     this.displayDialog = true;
   }
 
-  cloneTask(t: Task) {
+  cloneTask(t) {
     const task = {};
     for (const prop in t) {
       if (prop === 'text') {
         task[prop] = t[prop];
+      } else {
+        task[prop] = '';
       }
     }
     return task;

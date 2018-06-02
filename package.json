@@ -33,6 +33,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "chart.js": "^2.7.2",
+    "compat": "^1.0.4",
     "core-js": "^2.5.7",
     "cors": "^2.8.4",
     "express": "^4.16.3",
@@ -46,7 +47,6 @@
     "passport-jwt": "^4.0.0",
     "primeng": "^6.0.0-alpha.2",
     "rxjs": "^6.2.0",
-    "rxjs-compat": "^6.2.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

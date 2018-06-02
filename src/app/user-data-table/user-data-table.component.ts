@@ -1,7 +1,6 @@
 import { UserService } from './../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/User';
-import { map, filter, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-data-table',

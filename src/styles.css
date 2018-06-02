@@ -1,15 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-/* body {
-  margin: 0;
-} */
 
-/* html,
-body {
-  height: 100%;
-} */
+/* @import '../node_modules/primeng/resources/primeng.min.css'; */
 
-.mat-tab-label {
-  margin-left: 200px;
-  width: auto;
-}
+
+@import '../node_modules/primeng/resources/themes/omega/theme.css';
+
+

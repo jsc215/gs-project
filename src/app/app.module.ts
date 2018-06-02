@@ -13,13 +13,13 @@ import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { HumorComponent } from './humor/humor.component';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
-import { UsersComponent } from './users/users.component';
 import { UserService } from './services/user.service';
 import { UserDataTableComponent } from './user-data-table/user-data-table.component';
 import { TasksService } from './services/tasks.service';
 import { TasksComponent } from './tasks/tasks.component';
 
 // PrimeNg Components
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { CalendarModule } from 'primeng/calendar';
 import { TableModule } from 'primeng/table';
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -35,38 +35,40 @@ import { GrowlModule } from 'primeng/growl';
 import { ChartComponent } from './chart/chart.component';
 import { ButtonModule } from 'primeng/button';
 import { PaginatorModule } from 'primeng/paginator';
-
+import { InsightsComponent } from './insights/insights.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'tasks', component: TasksComponent },
   { path: 'form', component: FormComponent },
   { path: 'humor', component: HumorComponent },
   { path: 'user-data-table', component: UserDataTableComponent },
-  { path: 'tasks', component: TasksComponent },
   { path: 'chart', component: ChartComponent },
+  { path: 'insights', component: InsightsComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    TasksComponent,
     NotFoundComponent,
     FormComponent,
     HomeComponent,
     HumorComponent,
-    UsersComponent,
     UserDataTableComponent,
-    TasksComponent,
-    ChartComponent
+    ChartComponent,
+    InsightsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    TableModule,
+    OverlayPanelModule,
     LayoutModule,
     ButtonModule,
     PaginatorModule,
     ChartModule,
-    TableModule,
     SpinnerModule,
     CalendarModule,
     PickListModule,
