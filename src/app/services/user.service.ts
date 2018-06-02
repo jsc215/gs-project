@@ -18,12 +18,4 @@ export class UserService {
   addUser(newUser: User): Observable<User> {
     return this.http.post<User>('/api/users', newUser, httpOptions);
   }
-
-  // updateUser(newUser: User): Observable<User> {
-  //   return this.http.put<User>('users/' + newUser._id, newUser, httpOptions);
-  // }
-
-  // deleteUser(id) {
-  //   return this.http.delete('users/' + id, httpOptions);
-  // }
 }
