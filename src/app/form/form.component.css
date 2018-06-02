@@ -4,6 +4,12 @@
   margin-left: 100px;
   justify-items: left;
 }
+.form-intro{
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
 
 .mat-card {
   text-align: -webkit-center;

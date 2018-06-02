@@ -30,18 +30,20 @@ import { TreeTableModule } from 'primeng/treetable';
 import { TreeNode } from 'primeng/api';
 import { PickListModule } from 'primeng/picklist';
 import { ChartModule } from 'primeng/chart';
-import {MessagesModule} from 'primeng/messages';
+import { MessagesModule } from 'primeng/messages';
 import { GrowlModule } from 'primeng/growl';
 import { ChartComponent } from './chart/chart.component';
-import { OrderListModule } from 'primeng/primeng';
+import { ButtonModule } from 'primeng/button';
+import { PaginatorModule } from 'primeng/paginator';
+
 
 const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'form', component: FormComponent },
   { path: 'humor', component: HumorComponent },
   { path: 'user-data-table', component: UserDataTableComponent },
   { path: 'tasks', component: TasksComponent },
-  { path: 'chart', component: ChartComponent},
-  { path: '', component: HomeComponent },
+  { path: 'chart', component: ChartComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -60,6 +62,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    LayoutModule,
+    ButtonModule,
+    PaginatorModule,
     ChartModule,
     TableModule,
     SpinnerModule,
@@ -70,11 +75,9 @@ const appRoutes: Routes = [
     DialogModule,
     InputTextareaModule,
     PanelModule,
-    LayoutModule,
-    OrderListModule,
     HttpClientModule,
     MaterialModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
