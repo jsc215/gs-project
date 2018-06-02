@@ -26,20 +26,21 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
 import { SpinnerModule } from 'primeng/spinner';
-import { ButtonModule } from 'primeng/button';
 import { TreeTableModule } from 'primeng/treetable';
 import { TreeNode } from 'primeng/api';
 import { PickListModule } from 'primeng/picklist';
 import { ChartModule } from 'primeng/chart';
 import {MessagesModule} from 'primeng/messages';
-import {MessageModule} from 'primeng/message';
 import { GrowlModule } from 'primeng/growl';
+import { ChartComponent } from './chart/chart.component';
+import { OrderListModule } from 'primeng/primeng';
 
 const appRoutes: Routes = [
   { path: 'form', component: FormComponent },
   { path: 'humor', component: HumorComponent },
   { path: 'user-data-table', component: UserDataTableComponent },
   { path: 'tasks', component: TasksComponent },
+  { path: 'chart', component: ChartComponent},
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent }
 ];
@@ -53,20 +54,27 @@ const appRoutes: Routes = [
     HumorComponent,
     UsersComponent,
     UserDataTableComponent,
-    TasksComponent
+    TasksComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ChartModule,
+    TableModule,
+    SpinnerModule,
+    CalendarModule,
+    PickListModule,
     FormsModule,
     ReactiveFormsModule,
+    DialogModule,
     InputTextareaModule,
     PanelModule,
-    MaterialModule,
     LayoutModule,
+    OrderListModule,
     HttpClientModule,
+    MaterialModule,
     RouterModule.forRoot(appRoutes),
-    TableModule
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },

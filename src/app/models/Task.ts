@@ -1,5 +1,5 @@
 export class Task {
-  _id: String;
+  _id?: String;
   text: String;
   completed: Boolean;
   completedAt: Date;

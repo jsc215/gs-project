@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpHeaderResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Task } from '../models/Task';
@@ -8,7 +8,10 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
+
 export class TasksService {
   constructor(private http: HttpClient) {}
 
@@ -20,14 +23,11 @@ export class TasksService {
     return this.http.post<Task>('api/tasks', newTask, httpOptions);
   }
 
-  updateTask(task: Task): Observable<Task> {
-    return this.http.patch<Task>(`api/tasks/_id`, task, httpOptions);
+  updateTask(newTask: Task): Observable<Task> {
+    return this.http.patch<Task>(`api/tasks/${newTask._id}`, newTask, httpOptions);
   }
-  deleteTask(ta: number) {
-    const url = `api/tasks/_id`;
+  deleteTask(_id) {
+    const url = `api/tasks/${_id}`;
     return this.http.delete(url, httpOptions);
-
-    // subscribe in component or here...
-    // this.tasksService.deleteTask(task.id).subscribe();
   }
 }

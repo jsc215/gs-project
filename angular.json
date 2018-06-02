@@ -72,7 +72,7 @@
               "../node_modules/primeng/resources/primeng.min.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": ["../node_modules/chart.js/dist/Chart.js"],
             "assets": ["src/favicon.ico", "src/assets"]
           }
         },
