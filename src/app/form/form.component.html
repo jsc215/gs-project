@@ -3,7 +3,6 @@
     <h3>We hope you are enjoying your time with us here at Component World!</h3>
     <p>To get to know you better please fill out the following form so we can keep you informed on exciting opportunities</p>
   </div>
-
   <mat-card>
     <mat-card-title>
       Registration Form
@@ -75,7 +74,9 @@
                   <mat-option value="Linux">Linux</mat-option>
                 </mat-select>
                 <mat-error>
-                  <span *ngIf="!regiForm.get('OSofChoice').valid && regiForm.get('OSofChoice').touched">Please select an OS</span>
+                  <span *ngIf="!regiForm.get('OSofChoice').valid && regiForm.get('OSofChoice').touched">Please select an
+                    OS
+                  </span>
                 </mat-error>
               </mat-form-field>
             </td>

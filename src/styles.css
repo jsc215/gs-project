@@ -2,10 +2,21 @@
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+@import '../node_modules/primeng/resources/themes/omega/theme.css';
 
 /* @import '../node_modules/primeng/resources/primeng.min.css'; */
 
 
-@import '../node_modules/primeng/resources/themes/omega/theme.css';
 
 
+.mat-tab-label {
+  color: white;
+  background-color: gray;
+  border-right: 1px solid rgb(196, 187, 187);
+}
+
+.mat-tab-label-active {
+  background-color: white;
+  color:black;
+  border-right: 1px solid black;
+}

@@ -13,7 +13,7 @@ export class TasksComponent implements OnInit {
   task;
   selectedTask: Task;
   newTask: Boolean;
-  tasks;
+  tasks = [];
   cols: any;
   constructor(private tasksService: TasksService) {}
 
@@ -26,11 +26,10 @@ export class TasksComponent implements OnInit {
   }
 
   getTasks() {
+    this.tasksService.getTasks().subscribe((tasks) => {
+      Array.from((this.tasks = tasks['tasks'].map((task) => task)));
     // this.tasksService.getTasks().subscribe(tasks => {
     //   this.tasks = tasks;
-    this.tasksService.getTasks().subscribe((tasks) => {
-      // tslint:disable-next-line:no-shadowed-variable
-      const task = Array.from((this.tasks = tasks['tasks'].map((task) => task)));
     });
   }
 

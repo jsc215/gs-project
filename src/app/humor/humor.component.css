@@ -7,10 +7,15 @@ img {
   width: aut0;
 }
 
-.mat-tab{
+/* .mat-tab{
   background: blue;
-}
+} */
 .mat-progress-bar {
   width: 70%;
   margin: auto;
 }
+
+.mat-tab-label-active {
+  background-color: red !important;
+}
+

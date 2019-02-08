@@ -3,19 +3,17 @@ import { HttpClient, HttpHeaders, HttpHeaderResponse } from '@angular/common/htt
 import { Observable, throwError } from 'rxjs';
 import { Task } from '../models/Task';
 
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-@Injectable({
-  providedIn: 'root',
-})
-
+@Injectable()
 export class TasksService {
   constructor(private http: HttpClient) {}
 
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>('api/tasks', httpOptions);
+    return this.http.get<Task[]>('/api/tasks');
   }
 
   addTask(newTask: Task): Observable<Task> {
