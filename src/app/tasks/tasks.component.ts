@@ -27,9 +27,7 @@ export class TasksComponent implements OnInit {
 
   getTasks() {
     this.tasksService.getTasks().subscribe((tasks) => {
-      Array.from((this.tasks = tasks['tasks'].map((task) => task)));
-    // this.tasksService.getTasks().subscribe(tasks => {
-    //   this.tasks = tasks;
+      this.tasks = tasks;
     });
   }
 
@@ -50,6 +48,7 @@ export class TasksComponent implements OnInit {
     } else {
       this.tasksService.updateTask(this.task).subscribe((response) => {
         console.log(response);
+        // console.log(this.task);
       });
       tasks[this.tasks.indexOf(this.selectedTask)] = this.task;
     }
@@ -68,21 +67,24 @@ export class TasksComponent implements OnInit {
     });
   }
 
-  onRowSelect(event) {
+  onRowSelect() {
     this.newTask = false;
-    this.task = this.cloneTask(event.data);
+    this.task = this.cloneTask();
     this.displayDialog = true;
+    console.log(this.task);
   }
 
-  cloneTask(t) {
-    const task = {};
-    for (const prop in t) {
-      if (prop === 'text') {
-        task[prop] = t[prop];
-      } else {
-        task[prop] = '';
-      }
-    }
+  cloneTask() {
+    const task = Object.assign({}, this.selectedTask);
     return task;
-  }
+  //   const task = {};
+  //   for (const prop in t) {
+  //     if (prop === 'text') {
+  //       task[prop] = t[prop];
+  //     } else {
+  //       task[prop] = '';
+  //     }
+  //   }
+  //   return task;
+ }
 }

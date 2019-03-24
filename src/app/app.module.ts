@@ -20,6 +20,8 @@ import { TasksComponent } from './tasks/tasks.component';
 
 // PrimeNg Components
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { CheckboxModule } from 'primeng/checkbox';
+
 import { CalendarModule } from 'primeng/calendar';
 import { TableModule } from 'primeng/table';
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -67,6 +69,7 @@ const appRoutes: Routes = [
     OverlayPanelModule,
     LayoutModule,
     ButtonModule,
+    CheckboxModule,
     PaginatorModule,
     ChartModule,
     SpinnerModule,

@@ -1,38 +1,61 @@
-<p-table [columns]="cols" [value]="tasks" selectionMode="single" [(selection)]="selectedTask" (onRowSelect)="onRowSelect($event)">
+<p-table
+  [columns]="cols"
+  [value]="tasks"
+  selectionMode="single"
+  [(selection)]="selectedTask"
+  (onRowSelect)="onRowSelect()">
 
-  <ng-template pTemplate="header" let-columns>
+  <ng-template
+    pTemplate="header"
+    let-columns>
     <tr>
-      <th *ngFor="let col of columns">
-        {{col.header}}
-      </th>
+      <th *ngFor="let col of columns">{{col.header}}</th>
     </tr>
   </ng-template>
 
-  <ng-template pTemplate="body" let-rowData let-columns="columns">
+  <ng-template
+    pTemplate="body"
+    let-rowData
+    let-columns="columns">
     <tr [pSelectableRow]="rowData">
-      <td *ngFor="let col of columns">
-        {{rowData[col.field]}}
-      </td>
+      <td *ngFor="let col of columns">{{rowData[col.field]}}</td>
     </tr>
   </ng-template>
 
-  <ng-template pTemplate="summary" let-rowData>
+  <ng-template
+    pTemplate="summary"
+    let-rowData>
     <div style="text-align:left">
-      <button type='button' pButton icon="pi pi-plus" (click)="showDialogToAdd()" label="Add a New Task"></button>
+      <button
+        type='button'
+        pButton
+        icon="pi pi-plus"
+        (click)="showDialogToAdd()"
+        label="Add a New Task"></button>
     </div>
   </ng-template>
-
 </p-table>
 
-<p-dialog header="Put it on the Task List" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
+<p-dialog
+  appendTo="body"
+  header="Put it on the Task List"
+  [(visible)]="displayDialog"
+  [responsive]="true"
+  showEffect="fade"
+  [modal]="true"
   [width]="300">
-  <div class="ui-g ui-fluid" *ngIf="task">
+  <div
+    class="ui-g ui-fluid"
+    *ngIf="task">
     <div class="ui-g-12">
       <div class="ui-g-4">
         <label for="task">Task</label>
       </div>
       <div class="ui-g-8">
-        <input pInputText id="task" [(ngModel)]="task.text" />
+        <input
+          pInputText
+          id="task"
+          [(ngModel)]="task.text">
       </div>
     </div>
 
@@ -41,14 +64,27 @@
         <label for="completed">Completed?</label>
       </div>
       <div class="ui-g-8">
-        <input pInputText id="completed" [(ngModel)]="task.completed" />
+        <p-checkbox
+          binary="true"
+          [(ngModel)]="task.completed"></p-checkbox>
+        <!-- <input pInputText id="completed" [(ngModel)]="task.completed" /> -->
       </div>
     </div>
   </div>
   <p-footer>
     <div class="ui-dialog-buttonpane ui-helper-clearfix">
-      <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
-      <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+      <button
+        type="button"
+        pButton
+        icon="fa fa-close"
+        (click)="delete()"
+        label="Delete"></button>
+      <button
+        type="button"
+        pButton
+        icon="fa fa-check"
+        (click)="save()"
+        label="Save"></button>
     </div>
   </p-footer>
 </p-dialog>

@@ -9,7 +9,7 @@ const { mongoose } = require('../db/mongoose');
 router.get('/users', (req, res) => {
   User.find(
     (e, users) => {
-      res.send({ users }).send;
+      res.send({ users });
     },
     (e) => {
       res.status(400).send(e);
@@ -61,7 +61,7 @@ router.post('/tasks', (req, res) => {
 router.get('/tasks', (req, res) => {
   Task.find(
     (e, tasks) => {
-      res.send({ tasks }).send;
+      res.send(tasks );
     },
     (e) => {
       res.status(400).send(e);
@@ -84,7 +84,7 @@ router.get('/tasks/:id', (req, res) => {
       if (!task) {
         return res.status(404).send();
       }
-      res.send({ task });
+      res.send( task );
     })
     .catch((e) => {
       res.status(400).send();
@@ -105,7 +105,7 @@ router.delete('/tasks/:id', (req, res) => {
       if (!task) {
         return res.status(404).send();
       }
-      res.send({ task });
+      res.send( task );
     })
     .catch((e) => {
       res.status(400).send();
@@ -122,8 +122,9 @@ router.patch('/tasks/:id', (req, res) => {
     return res.status(404).send();
   }
 
-  if (body.completed === true && body.completed === true) {
-    body.completedAt = new Date().getTime();
+  if (body.completed === true) {
+    body.completedAt = new Date().toString();
+    console.log(body.completedAt);
   } else {
     body.completed = false;
     body.completedAt = null;
@@ -133,10 +134,10 @@ router.patch('/tasks/:id', (req, res) => {
       if (!task) {
         return res.status(404).send();
       }
-      res.send({ task });
+      res.send( task );
     })
     .catch((e) => {
-      res.status(400).send;
+      res.status(400).send();
     });
 });
 
