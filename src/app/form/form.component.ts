@@ -50,6 +50,7 @@ export class FormComponent {
     } else {
       this.IsAccepted = 0;
     }
+    console.log(event);
   }
 
   clearForm() {
